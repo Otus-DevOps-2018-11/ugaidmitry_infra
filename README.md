@@ -1,4 +1,4 @@
-ДЗ 5
+ДЗ  host bastion
 
 1)Подключние к someinternalhost в одну команду: ssh someinternalhost
 
