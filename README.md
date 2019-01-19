@@ -1,4 +1,5 @@
 ДЗ 5
+
 1)Подключние к someinternalhost в одну команду: ssh someinternalhost
 Создаем файл ~/.ssh/config с описание хостов, пользователей и команд:
 Host bastion
