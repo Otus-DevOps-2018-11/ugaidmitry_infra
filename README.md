@@ -1,5 +1,5 @@
 ДЗ Cloud-Testapp
-testapp_IP = 35.198.167.169
+testapp_IP = 35.204.206.231
 testapp_port = 9292
 
 
