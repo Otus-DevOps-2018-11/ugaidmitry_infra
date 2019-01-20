@@ -1,3 +1,8 @@
+ДЗ Cloud-Testapp
+testapp_IP = 35.198.167.169
+testapp_port = 9292
+
+
 ДЗ  host bastion
 
 1)Подключние к someinternalhost в одну команду: ssh someinternalhost
