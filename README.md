@@ -24,3 +24,11 @@ someinternalhost_IP = 10.164.0.3
 Подключение к Pritunl серверу с рабочего хоста: sudo openvpn --config cloud-bastion.vpn
 
 
+Д.З 7
+
+- Получены практические навыки работы с packer
+
+- Создан шаблон packer для подготовки reddit-base образа. Шаблон находится в файле packer/ubuntu16.json. 
+- Чувствительные переменные вынесены в файл переменных packer/variables.json.example
+
+
