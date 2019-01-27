@@ -24,3 +24,20 @@ someinternalhost_IP = 10.164.0.3
 Подключение к Pritunl серверу с рабочего хоста: sudo openvpn --config cloud-bastion.vpn
 
 
+Д.З 7
+
+Получены практические навыки работы с packer
+
+Создан шаблон packer для подготовки reddit-base образа. Шаблон находится в файле packer/ubuntu16.json.
+
+Чувствительные переменные вынесены в файл переменных packer/variables.json.example
+
+Д.З 8
+В процессе сделано:
+  -1  На основе terrafrom развернуто приложение reddit.Доступно по адресу  http://адрес:9292.
+  -2 Определена input переменная для приватного ключа использующегося в определении подключения для провижинеров (connection).Файл [https://github.com/Otus-DevOps-2018-11/ugaidmitry_infra/blob/terraform-1/terraform/main.tf](url)
+ -3 Определил  input переменную для задания зоны в ресурсе
+"google_compute_instance" "app". [https://github.com/Otus-DevOps-2018-11/ugaidmitry_infra/blob/terraform-1/terraform/main.tf](url)
+ -4 Отформатировал все конфигурационные файлы используя
+команду terraform fm
+ 
