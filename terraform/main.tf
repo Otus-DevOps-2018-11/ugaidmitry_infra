@@ -1,11 +1,8 @@
 provider "google" {
   version = "1.4.0"
-
-  project = "infra-228815"
-  region = "europe-west4-a"
-  #project = "${var.project}"
-
-  #region = "${var.region}"
+   
+  project = "${var.project}"
+  region = "${var.region}"
 }
 
 resource "google_compute_instance" "app" {
@@ -24,7 +21,7 @@ resource "google_compute_instance" "app" {
 
   #определение сетевого интерфейса
   network_interface {
-    # сеть , к которой присоеденить интерфейс
+    # сеть,к которой присоеденить интерфейс
     network = "default"
 
     # использовать ephimeral IP для доступа в интернет
@@ -32,20 +29,22 @@ resource "google_compute_instance" "app" {
   }
 
   metadata {
-    #	ssh-keys = "appuser:${file("~/.ssh/id_rsa.pub")}"
+    
     ssh-keys = "appuser:${file(var.public_key_path)}"
   }
 	
 
-  #=====SSH_FOR_PROVISIONERS
+  #SSH ROVISIONERS
   connection {
     type        = "ssh"
     user        = "appuser"
     agent       = false
-    private_key = "${file(var.private_key_path)}"
+    private_key = "${file("~/.ssh/appuser")}"
   }
 
-  #=====PROVISIONERS======
+
+
+  #PROVISIONERS
   provisioner "file" {
     source      = "files/puma.service"
     destination = "/tmp/puma.service"
@@ -68,10 +67,10 @@ resource "google_compute_firewall" "firewall_puma" {
     ports    = ["9292"]
   }
 
-  # откуда разрешаем доступ
+  #откуда разрешаем доступ
   source_ranges = ["0.0.0.0/0"]
 
-  # правила дл яинстансов с тегами
+  #правила дл яинстансов с тегами
   target_tags = ["reddit-app"]
 }
 
