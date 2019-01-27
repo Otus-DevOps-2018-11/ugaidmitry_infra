@@ -1,11 +1,11 @@
 provider "google" {
   version = "1.4.0"
 
-  #	project = "infra-228815"
-  #	region = "europe-west1"
-  project = "${var.project}"
+  project = "infra-228815"
+  region = "europe-west4-a"
+  #project = "${var.project}"
 
-  region = "${var.region}"
+  #region = "${var.region}"
 }
 
 resource "google_compute_instance" "app" {
@@ -17,7 +17,7 @@ resource "google_compute_instance" "app" {
   #определение загрузочного диска
   boot_disk {
     initialize_params {
-      #	image = "reddit-base-1547821025"
+      #	image = "reddit-base-1548339123"
       image = "${var.disk_image}"
     }
   }
@@ -32,15 +32,15 @@ resource "google_compute_instance" "app" {
   }
 
   metadata {
-    #	ssh-keys = "muxund:${file("~/.ssh/id_rsa.pub")}"
-    ssh-keys = "muxund:${file(var.public_key_path)}"
+    #	ssh-keys = "appuser:${file("~/.ssh/id_rsa.pub")}"
+    ssh-keys = "appuser:${file(var.public_key_path)}"
   }
 	
 
   #=====SSH_FOR_PROVISIONERS
   connection {
     type        = "ssh"
-    user        = "muxund"
+    user        = "appuser"
     agent       = false
     private_key = "${file(var.private_key_path)}"
   }

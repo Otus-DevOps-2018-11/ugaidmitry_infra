@@ -4,7 +4,7 @@ variable project {
 
 variable region {
   description = "Region"
-  default     = "europe-west1"
+  default     = "europe-west4-a"
 }
 
 variable public_key_path {
@@ -17,5 +17,5 @@ variable disk_image {
 
 variable zone {
   description = "zone of creating instance"
-  default     = "europe-west1-b"
+  default     = "europe-west4-a"
 }
