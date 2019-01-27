@@ -1,8 +1,8 @@
 provider "google" {
   version = "1.4.0"
-   
+
   project = "${var.project}"
-  region = "${var.region}"
+  region  = "${var.region}"
 }
 
 resource "google_compute_instance" "app" {
@@ -29,25 +29,16 @@ resource "google_compute_instance" "app" {
   }
 
   metadata {
-    
     ssh-keys = "appuser:${file(var.public_key_path)}"
- }
-	
-
-
+  }
 
   ##SSH PROVISIONERS
   connection {
-  
     type        = "ssh"
     user        = "appuser"
     agent       = false
     private_key = "${file("${var.private_key_path}")}"
   }
-
-
-
-
 
   #PROVISIONERS
   provisioner "file" {
@@ -78,4 +69,3 @@ resource "google_compute_firewall" "firewall_puma" {
   #правила дл яинстансов с тегами
   target_tags = ["reddit-app"]
 }
-
