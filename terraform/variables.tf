@@ -1,5 +1,5 @@
 variable project {
-  description = "infra-228815"
+  description = "Project ID"
 }
 
 variable region {
