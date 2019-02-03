@@ -1,5 +1,5 @@
 variable project {
-  description = "infra-228815"
+  description = "Project ID"
 }
 
 variable region {
@@ -9,12 +9,10 @@ variable region {
 
 variable public_key_path {
   description = "Path to the public key used for ssh access"
-  
 }
 
 variable private_key_path {
   description = "Path to the private key used for ssh access"
-
 }
 
 variable disk_image {
@@ -52,3 +50,5 @@ variable files_puma_service {
 variable files_deploy_sh {
   description = "File for deploy puma service"
 }
+
+
