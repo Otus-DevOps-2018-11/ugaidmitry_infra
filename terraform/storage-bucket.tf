@@ -2,16 +2,24 @@ provider "google" {
   version = "1.20.0"
   project = "${var.project}"
   region  = "${var.region}"
+  zone = "${var.zone}"
 }
 
-module "storage-bucket" {
-  source  = "SweetOps/storage-bucket/google"
-  version = "0.1.1"
+resource "google_storage_bucket" "state_bucket" {
+  name = "bucket-ugaidmitry"
 
-  # Имена поменяйте на другие
-  name = ["terraform-reddit-bucket-test"]
+
+  versioning {
+    enabled = true
+  }
+
+  force_destroy = true
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
-output storage-bucket_url {
-  value = "${module.storage-bucket.url}"
-}
+resource "google_storage_bucket_acl" "state_storage_bucket_acl" {
+  bucket         = "${google_storage_bucket.state_bucket.name}"
+predefined_acl = "publicreadwrite"
