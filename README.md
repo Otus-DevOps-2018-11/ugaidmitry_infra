@@ -44,7 +44,7 @@ someinternalhost_IP = 10.164.0.3
  
   -4 Отформатировал все конфигурационные файлы используя команду terraform fm
  
-Д.З 9
+  Д.З 9
 
   -1  Создал шаблоны для packer db.json и app.json, на основе которых создал базовые образы reddit-base-app и reddit-base-db
   
