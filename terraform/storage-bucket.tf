@@ -21,5 +21,5 @@ resource "google_storage_bucket" "state_bucket" {
 }
 
 resource "google_storage_bucket_acl" "state_storage_bucket_acl" {
-  bucket         = "${google_storage_bucket.state_bucket.name}"
+bucket         = "${google_storage_bucket.state_bucket.name}"
 predefined_acl = "publicreadwrite"
