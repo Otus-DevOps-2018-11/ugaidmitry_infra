@@ -17,7 +17,7 @@ resource "google_compute_instance" "app" {
     private_key = "${file(var.private_key_path)}"
   }
 
-provisioner "file" {
+  provisioner "file" {
     source      = "./../files/puma.service"
     destination = "/tmp/puma.service"
   }
@@ -25,10 +25,6 @@ provisioner "file" {
   provisioner "remote-exec" {
     script = "./../files/deploy.sh"
   }
-
-
-
-
 
   network_interface {
     network = "default"
