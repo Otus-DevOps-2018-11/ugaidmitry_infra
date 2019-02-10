@@ -56,3 +56,14 @@ someinternalhost_IP = 10.164.0.3
   
   -5  Использовал модуль storage-bucket от SweetOPS для создания бакетов, в которых будут храниться стейт файлы stage и prod окружений
 
+ Д.3 10
+
+  -1 Установлен Ansible 
+  
+  -2 Создан файл invertory (`yml`)
+
+  -3 Создан файл `ansible.cfg` со значениями по умолчанию
+
+  -4 Создан ansible playbook, описанный в `clone.yml`, для проверки ansible для повторяющихся задач.
+
+
