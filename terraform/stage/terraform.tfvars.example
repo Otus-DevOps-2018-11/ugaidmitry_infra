@@ -1,4 +1,3 @@
-
 project = "infra-228815"
 public_key_path = "~/.ssh/appuser.pub"
 disk_image = "reddit-base"
@@ -10,3 +9,4 @@ db_disk_image="reddit-base-db"
 files_puma_service = "./../files/puma.service"
 files_deploy_sh = "./../files/deploy.sh"
 db_internal_ip = "${module.db.db_internal_ip}"
+
